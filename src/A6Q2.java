@@ -1,8 +1,5 @@
-package assignmentFour;
-
 
 import java.util.Scanner;
-
 
 /*
  * To change this template, choose Tools | Templates
@@ -13,7 +10,7 @@ import java.util.Scanner;
  *
  * @author angeg9136
  */
-public class A4Q1 {
+public class A6Q2 {
 
     /**
      * @param args the command line arguments
@@ -21,14 +18,15 @@ public class A4Q1 {
     public static void main(String[] args) {
         //scan
         Scanner input = new Scanner(System.in);
-        //ask them for their name
-        System.out.println("Hi, what is your name?");
-        //make a string to store their name
-        String name = input.nextLine();
-        //say hello to them and ask they how they are
-        System.out.println("Hello " + name+ ". How are you today?");
+               
+        //ask how many people's heights we are going to see
+        System.out.println("How many people are checking their heights?");
+        //make an integer to hold 
+        int howMany = input.nextInt();
         
         
-       
+        
+        
+        
     }
 }

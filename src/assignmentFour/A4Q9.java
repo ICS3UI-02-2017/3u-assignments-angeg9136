@@ -137,6 +137,7 @@ public class A4Q9 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
+       //addition
         // get the first number from text box
         String num1 = number1.getText();
         // get the second number from text box
@@ -147,7 +148,7 @@ public class A4Q9 extends javax.swing.JFrame {
         int number2 = Integer.parseInt(num2);
         //add the numbers
         int result = (number1 + number2);
-        //read them the answer
+        //read them the answer from the answer box
         resultBox.setText("" + result);
         
        
@@ -161,6 +162,7 @@ public class A4Q9 extends javax.swing.JFrame {
     }//GEN-LAST:event_number1ActionPerformed
 
     private void SubtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubtractActionPerformed
+        //subtraction
         // get the first number from text box
         String num1 = number1.getText();
         // get the second number from text box
@@ -177,6 +179,7 @@ public class A4Q9 extends javax.swing.JFrame {
     }//GEN-LAST:event_SubtractActionPerformed
 
     private void MultiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiplyActionPerformed
+        // multiply
         // get the first number from text box
         String num1 = number1.getText();
         // get the second number from text box
@@ -192,6 +195,7 @@ public class A4Q9 extends javax.swing.JFrame {
     }//GEN-LAST:event_MultiplyActionPerformed
 
     private void DivideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivideActionPerformed
+        //divison
         // get the first number from text box
         String num1 = number1.getText();
         // get the second number from text box

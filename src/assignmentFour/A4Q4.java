@@ -18,31 +18,46 @@ public class A4Q4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //maje the scanner
+        //scan
         Scanner input = new Scanner(System.in);
         //ask how much the food costs
-        System.out.println("How much does the food cost?");
-        //say how much the food costs
-        double name = input.nextDouble();
+        System.out.println("How much does the food for prom cost?");
+        //make a double to store answer
+        double food = input.nextDouble();
+        
         //ask how much the dj costs
         System.out.println("How much does the DJ cost?");
-        double nam = input.nextDouble();
+        //make a double so store answer
+        double dj = input.nextDouble();
+        
         //ask how much it costs to rent the hall
         System.out.println("How much does it cost to rent the hall?");
-        double na = input.nextDouble();
+        //make a double so store answer
+        double rent = input.nextDouble();
+        
         //ask how much the decorations cost
-        System.out.println("How much does decorations cost?");
-        double n = input.nextDouble();
-        //ask how much it costs for the staff 
-        double l = input.nextDouble();
+        System.out.println("How much do the decorations cost?");
+        //make a double so store answer
+        double decorations = input.nextDouble();
+        
+        //ask how much the staff costs
         System.out.println("How much does it cost for staff?");
-        double a = input.nextDouble();
-        //ask how much all the miscellaneous stuff costs
-        System.out.println("How much for miscellaneous costs?");
-        double d = input.nextDouble();
+        //make a double so store answer
+        double staff = input.nextDouble();
+        
+        //ask how much for miscenllaneous price
+        System.out.println("How much are the msicellaneous costs?");
+        //make a double so store answer
+        double misc = input.nextDouble();
+        
         //add them together
-        double naenae = (name + nam + na + n + l + a + d);
-        //output their number
-        System.out.println("The Total cost is " + naenae);
+        double total = (food + dj + rent + decorations + staff + misc);
+        //read them their total
+        System.out.println("Your total is " + total);
+       
+                
+        
+        
+        
     }
 }

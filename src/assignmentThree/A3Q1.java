@@ -35,11 +35,11 @@ public class A3Q1 {
         new Wall (l, 2, 2, Direction.SOUTH);
         new Wall (l, 2, 2, Direction.EAST);
         
-        // create the integer
-        int numberOfRotations =2;
+        // create the integer soo he only goes around twice
+        int rotations =2;
         
         //make depresso move around and stop at 2 rotations
-        while(numberOfRotations > 0) {
+        while(rotations > 0) {
             depresso.move(2);
             depresso.turnLeft();
             depresso.move(3);
@@ -51,9 +51,9 @@ public class A3Q1 {
             depresso.turnLeft();
             depresso.move();
             
-      // take one away every time a rotation is completed
-            numberOfRotations = numberOfRotations - 1;
-        }
+         //take away a rotation once 1 is completed
+         rotations = rotations -1;}
+        
         
         
     }

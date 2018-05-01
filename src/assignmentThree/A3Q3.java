@@ -26,28 +26,25 @@ public class A3Q3 {
         //create the robot
         RobotSE thiccBoy = new RobotSE(oofVille, 1, 1, Direction.EAST,20);
         
-        //create the integer
-        int numberOfSeeds = 20;
-     
-        while (numberOfSeeds > 0) {
-            if(!thiccBoy.canPickThing()) {
-                //take away one integer everytime a seed is picked
-                thiccBoy.putThing();
-                thiccBoy.move();
-                numberOfSeeds = numberOfSeeds -1;
-            }
-          //make him turn when neccasary
+        //create int for seeds
+        int seeds = 20;
+        //while he has more than 0 seeds make him plant
+        while(seeds > 0){
+            if (!thiccBoy.canPickThing());{
+            //plant seeds
+            thiccBoy.putThing();
+            thiccBoy.move();
+            //take away a seed after he plants one so he only plants 20
+            seeds = seeds -1;}
             
-            if (thiccBoy.getAvenue() ==5){
-                thiccBoy.turnRight();
-               
-            }
-            if (thiccBoy.getAvenue() ==1){
-                thiccBoy.turnLeft();
-            }
+        //make him turn when needed  
+        if (thiccBoy.getAvenue() ==5){
+            thiccBoy.turnRight();}
+        
+        //make him turn left when needed
+        if (thiccBoy.getAvenue() ==1){
+            thiccBoy.turnLeft();}    
+            }        
         }
-        
-        
-        
     }
-}
+

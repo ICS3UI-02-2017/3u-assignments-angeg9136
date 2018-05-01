@@ -25,9 +25,9 @@ public class A3Q4 {
         //create the robot
         RobotSE yoozy = new RobotSE (momoTown, 3, 3, Direction.SOUTH);
         
-        //create the squares for the city
-        new Wall (momoTown, 1, 1, Direction.NORTH);
-        new Wall (momoTown, 1, 1, Direction.WEST);
+        //create city with squares
+        new Wall (momoTown, 1, 1, Direction.NORTH);    
+        new Wall (momoTown, 1, 1, Direction.WEST);    
         new Wall (momoTown, 1, 2, Direction.NORTH);
         new Wall (momoTown, 1, 2, Direction.EAST);
         new Wall (momoTown, 2, 1, Direction.WEST);
@@ -62,25 +62,18 @@ public class A3Q4 {
         new Wall (momoTown, 5, 5, Direction.EAST);
         new Wall (momoTown, 5, 5, Direction.SOUTH);
         
-        //make him move around the city squares
-        int numberOfRotations =4;
-          while (numberOfRotations > 0){            
+        //make him move around the city squares 4 times
+        int rotations =4;
+          while (rotations > 0){            
             yoozy.move(3);
-            
             yoozy.turnLeft();
-            
             yoozy.move(3);
-            
             yoozy.turnLeft();
-            
             yoozy.move(3);
-            
             yoozy.turnLeft();
-            
             yoozy.move(3);
-            
-            numberOfRotations = numberOfRotations - 1;
+            rotations = rotations - 1;}
         
-    }
+    
 }
 }

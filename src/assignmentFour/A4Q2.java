@@ -20,14 +20,18 @@ public class A4Q2 {
     public static void main(String[] args) {
         //scan
         Scanner input = new Scanner(System.in);
-        //say hello
-        System.out.println("Hello, how many inches would you like to convert?");
-        //make the inches a thing
+        
+        //ask how many inches they want
+        System.out.println("How many inches do you wish to convert?");
+        //use a double to store the inches
         double inches = input.nextDouble();
-        //make it so there are 2.54 centimetres in an inch
-        double number = 2.54*inches;
-        //show them how many centimetres they have
-        System.out.println(inches + " inches is the same as " + number +" centimetres.");
+        //make the centimetres 2.54x the amount as inches
+        double cm = inches * 2.54;
+        //read out their answer
+        System.out.println(inches + "inches is the same as " +cm+ " centimetres");
+        
+        
+       
         
         
         

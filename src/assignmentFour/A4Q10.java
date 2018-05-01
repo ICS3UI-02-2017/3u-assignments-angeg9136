@@ -110,7 +110,7 @@ public class A4Q10 extends javax.swing.JFrame {
         //calculate the fahrehnheit to celcius
         double f3 = (f2 * 1.8);
         double f4 = (f3 + 32);
-        //say their number
+        //say their number 
         c.setText("" + f4);
     }//GEN-LAST:event_c1ActionPerformed
 
@@ -121,9 +121,10 @@ public class A4Q10 extends javax.swing.JFrame {
         double c2 = Integer.parseInt(c1);
         //calculate the celcius to fahrenheit
         double c3 = (c2 - 32);
+        //we are using the formula for farhenheit
         double c4 = (c3 * 5);
         double c5 = (c4 / 9);
-        //say their number
+        //read out their #
         f.setText("" + c5);
         
         

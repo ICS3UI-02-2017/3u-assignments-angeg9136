@@ -22,12 +22,13 @@ public class A4Q3 {
         Scanner input = new Scanner(System.in);
         //ask them to type their numbers out
         System.out.println("Type out your 4 numbers.");
-        //get it to numbers can be decimals
+        //store numbers
          double inches = input.nextDouble();
          double inches1 = input.nextDouble();
          double inches3 = input.nextDouble();
-         double inches4 = input.nextDouble();
+         double inches4 = input.nextDouble(); 
          
+         //read out their total
          System.out.println("Your numbers were " + inches + ", " + inches1 + ", " + inches3 + ", " + inches4);
          
     }

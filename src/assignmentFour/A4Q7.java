@@ -1,12 +1,10 @@
-package assignmentFour;
-
-
-import java.util.Scanner;
-
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+package assignmentFour;
+
+import java.util.Scanner;
 
 /**
  *
@@ -18,68 +16,75 @@ public class A4Q7 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // scan
+        //scan
         Scanner input = new Scanner(System.in);
-        // make the integers
-        int playerB = 1;
-        int playerA = 1;
-        
-        // make the game
+        //make a player
+        int player1 = 1;
+                
+        //make game
         while (true){
-            // ask for sum of dice
-            System.out.print( "Enter your number of dice: ");
-            // store the sum
-            playerA = input.nextInt();
-            if (playerA > 12 || playerA < 2){
+            //ask them to input sum of dice
+            System.out.println("Enter sum of dice");
+            //store sum using string
+            String roll = input.nextLine();
+            //parse string to make it a number
+            int dice = Integer.parseInt(roll);
+            //show them their number
+            player1 = dice + player1;
+            System.out.println("You are now on square " + player1);
+            //make them unable to put a sum of the dice above 12 or below 2
+            if (dice >12 || dice <2){
+                //tell them the dice doesn't go below 2 or above 12
                 System.out.println("You quit!");
+                //break when done
                 break;
-                }  
+                
+            }
+            //make all 3 ladders
+            if (player1 == 9){
+                player1 = (player1 + 25);
+                System.out.println("You hit a ladder! You are now on square 34");}
+          
+            if (player1 == 67){
+                player1 = (player1 + 19);
+                System.out.println("You hit a ladder! You are now on square 86");}
             
-            //make it so they can't go above 12 or less than 2, their are 2 dice
-            if (playerA <= 12 && playerA >= 2){
-                //start game
-                //add # of dice to location of player
-                if (playerB < 88){
-                playerB = (playerB + playerA);
-                // display location of player
-                System.out.println("you are now on square: " + playerB);
-                // add snakes and ladders
-                if (playerB == 6){
-                playerB = (playerB + 25);
-                System.out.println("you hit a ladder! you are now on square: " + playerB);
-                }
-                if (playerB == 50){
-                playerB = (playerB + 24);
-                System.out.println("you hit a ladder! you are now on square: " + playerB);
-                }
-                if (playerB == 69){
-                playerB = (playerB + 19);
-                System.out.println("you hit a ladder! you are now on square: " + playerB);
-                }
-                if (playerB == 83){
-                playerB = (playerB - 35);
-                System.out.println("you hit a snake! you are now on square: " + playerB);
-                }
-                if (playerB == 96){
-                playerB = (playerB - 42);
-                System.out.println("you hit a snake! you are now on square: " + playerB);
-                }
-                if (playerB == 99){
-                playerB = (playerB - 22);
-                System.out.println("you hit a snake! you are now on square: " + playerB);
-                } 
+            if (player1 == 40){
+                player1 = (player1 + 24);
+                System.out.println("You hit a ladder! You are now on square 64");}
+            
+            
+            //make all 3 snakes
+            if (player1 == 90){
+                player1 = (player1 - 42);
+                System.out.println("You hit a snake! You are now on square 48");}
+            
+            if (player1 == 54){
+                player1 = (player1 - 35);
+                System.out.println("You hit a snake! You are now on square 19");}  
+            
+            if (player1 == 99){
+                player1 = (player1 - 22);
+                System.out.println("You hit a snake! You are now on square 77");}
+            
+              //if they are on square 100 tell them they won
+            while (player1 == 100){
+                //spam out they won to make them feel good about themselves
+                System.out.println("Congratulations! you won!");
                 
-                
-                // if on square 100 say they won
-                if (playerB == 100){
-                System.out.println("you won!");
-                break;
-                
-    }
-                }
+        }
+            
+            
+           
+            }   
             }
         }
-    }
-}
         
-                
+        
+        
+        
+        
+        
+        
+    
+
