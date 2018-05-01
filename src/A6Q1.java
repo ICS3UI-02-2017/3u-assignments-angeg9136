@@ -21,13 +21,7 @@ public class A6Q1 {
        
         //ask how many students are in the class
         System.out.println("How many students are in the class?");
-        //use an integer to store students
-        int students = input.nextInt();
         
-        //make an array to store their marks
-        double[] marks = new double[3];
-        //ask for student marks
-        System.out.println("Enter the marks:");
         
         
         
