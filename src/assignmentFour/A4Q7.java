@@ -67,10 +67,18 @@ public class A4Q7 {
                 player1 = (player1 - 22);
                 System.out.println("You hit a snake! You are now on square 77");}
             
+            //make it so if you go over 100 you lose
+            if (player1 >100){
+                player1 = (player1 - 100);
+                System.out.println("You quit!");
+            }
+            
               //if they are on square 100 tell them they won
             while (player1 == 100){
                 //spam out they won to make them feel good about themselves
                 System.out.println("Congratulations! you won!");
+                
+                
                 
         }
             
