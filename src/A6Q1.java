@@ -19,9 +19,9 @@ public class A6Q1 {
         //scan
         Scanner input = new Scanner(System.in);
         //ask how many students are in the class
-       System.out.println("How many students are in the class?");
+        System.out.println("How many students are in the class?");
         //use an integer to store students
-       int students = input.nextInt();
+        int students = input.nextInt();
  
         //make an array to store marks
         double[] marks = new double[students];
@@ -39,7 +39,7 @@ public class A6Q1 {
         
         //divide the marks by students
         double totalAverage = sum / students;
-        //print out the average
+        //read out the average
         System.out.println("The average is " + totalAverage + "%");
     }
 }

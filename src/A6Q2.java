@@ -21,12 +21,7 @@ public class A6Q2 {
                
         //ask how many people's heights we are going to see
         System.out.println("How many people are checking their heights?");
-        //make an integer to hold 
-        int num = input.nextInt();
-                
-        //create array to store average
-        double[] average = new double[num]; 
-        System.out.println("");
+        
         
                 
                 
