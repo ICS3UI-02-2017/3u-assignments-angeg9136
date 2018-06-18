@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -89,9 +90,9 @@ public class finalAssignment extends JComponent implements ActionListener {
     int enemy8D = 60;
     
     //create win box
-    int win1 = 390;
-    int win2 = 480;
-    int win3 = 90;
+    int win1 = 0;
+    int win2 = 0;
+    int win3 = 30;
     int win4 = 30;
     
     //set a purple space sky color for my background
@@ -100,7 +101,7 @@ public class finalAssignment extends JComponent implements ActionListener {
     Color play = new Color(0, 0, 102);
     
     //create a small dot for stars
-    BasicStroke dot = new BasicStroke(1);
+    BasicStroke dot = new BasicStroke(3);
    
     //create a color for the enemies
     Color badguy = new Color(206, 214, 199);
@@ -117,32 +118,30 @@ public class finalAssignment extends JComponent implements ActionListener {
     //make win box
     Rectangle winBox = new Rectangle(win1, win2, win3, win4);
     
-    
-    
     //make integers for the first enemy for bounce off angles and speed
-    int enemyAngle = 45;
+    int enemyAngle = 4;
     int enemySpeed = 7;
     //make integers for the second enemy for bounce off angles and speed
-    int enemy2Angle = 32;
-    int enemy2Speed = 2;
+    int enemy2Angle = 90;
+    int enemy2Speed = 3;
     //make integers for the third enemy for bounce off angles and speed
-    int enemy3Angle = 69;
-    int enemy3Speed = 6;
+    int enemy3Angle = 45;
+    int enemy3Speed = 5;
     //make integers for the fourth enemy for bounce off angles and speed
-    int enemy4Angle = 69;
-    int enemy4Speed = 5;
+    int enemy4Angle = 45;
+    int enemy4Speed = 4;
     //make integers for the fifth enemy for bounce off angles and speed
     int enemy5Angle = 45;
-    int enemy5Speed = 5;
+    int enemy5Speed = 2;
     //make integers for the sixth enemy for bounce off angles and speed
-    int enemy6Angle = 69;
-    int enemy6Speed = 3;
+    int enemy6Angle = 120;
+    int enemy6Speed = 6;
     //make integers for the seventh enemy for bounce off angles and speed
-    int enemy7Angle = 23;
-    int enemy7Speed = 4;
+    int enemy7Angle = 83;
+    int enemy7Speed = 6;
     //make integers for the eigth enemy for bounce off angles and speed
-    int enemy8Angle = 69;
-    int enemy8Speed = 15;
+    int enemy8Angle = 75;
+    int enemy8Speed = 5;
     
     //create mouse x and y coords
     int mouseX = 0;
@@ -200,12 +199,18 @@ public class finalAssignment extends JComponent implements ActionListener {
     @Override
     public void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D)g;
-        
+     
         // always clear the screen first!
         g.clearRect(0, 0, WIDTH, HEIGHT);
         
+        //new font
+        Font big = new Font("Arial", Font.BOLD, 30);
+        //font for kill count
+        Font score = new Font("Arial", Font.BOLD, 20);
+                
+        
         //make the background and color it a space theme of purple
-        g.setColor(purple);
+        g.setColor(Color.BLACK);
         g.fillRect(back1, back2, back3, back4);
         
         //make some tiny stars in the background
@@ -223,19 +228,30 @@ public class finalAssignment extends JComponent implements ActionListener {
         g.drawLine(200, 700, 200, 700);
         g.drawLine(263, 590, 263, 590);
         g.drawLine(120, 400, 120, 400);
+        g.drawLine(533, 106, 533, 106);
+        g.drawLine(333, 720, 333, 720);
+        g.drawLine(444, 111, 444, 111);
+        g.drawLine(259, 777, 259, 777);
+        g.drawLine(621, 353, 621, 353);
         
         //set color to the enemy color
         g.setColor(badguy);
         //make the enemies small and big and they are squares
         g.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
+        //multicolored
+        g.setColor(purple);
         g.fillRect(enemy2.x, enemy2.y, enemy2.width, enemy2.height);
         g.fillRect(enemy3.x, enemy3.y, enemy3.width, enemy3.height);
         g.fillRect(enemy4.x, enemy4.y, enemy4.width, enemy4.height);
+        g.setColor(Color.DARK_GRAY);
         g.fillRect(enemy5.x, enemy5.y, enemy5.width, enemy5.height);
         g.fillRect(enemy6.x, enemy6.y, enemy6.width, enemy6.height);
         g.fillRect(enemy7.x, enemy7.y, enemy7.width, enemy7.height);
         g.fillRect(enemy8.x, enemy8.y, enemy8.width, enemy8.height);
-        
+        //change color
+        g.setColor(Color.WHITE);
+        //set font for kills
+        g.setFont(score);
         //make the amount of kills visible
         g.drawString("Kills: " + String.valueOf(kills), WIDTH/2, 100);
         //this is where you can choose to play again if win
@@ -243,16 +259,17 @@ public class finalAssignment extends JComponent implements ActionListener {
             g.setColor(play);
             g.fillRect(win1, win2, win3, win4);
             g.setColor(Color.WHITE);
-            g.drawString("You win!", WIDTH/2, 400);
-            g.drawString("Play again?", WIDTH/2, 500);}
+            //say they won
+            g.setFont(big);
+            g.drawString("Congratulations, you win!",250, 400);
+            g.drawString("If you want to play again click this button!", 100, 30);
+            g.drawString("<----",30, 30);}
         
         //output amount of clicks used
-        g.drawString("Amount of clicks: " + String.valueOf(numberOfClicks),100,100);
+        //smaller font
+        g.setFont(score);
+        g.drawString("Amount of clicks: " + String.valueOf(numberOfClicks),500,790);
         
-        
-        
-            
-            
         //end of drawing
     
     }
@@ -339,9 +356,8 @@ public class finalAssignment extends JComponent implements ActionListener {
         //take away the entire height so it looks as if he is circling the screen
         enemy8.y = enemy8.y -800;}
     
-  
     //we have what is above and what  is below so that they move in a more random pattern
-    //with both they will sometimes bounce off angles and sometimes come back on
+    //with both they will sometimes bounce off angles and sometimes leave the screen
     
     //create a variable for the angle he will bounce at 
      double newAngle8 = Math.toRadians(enemy8Angle);    
@@ -414,10 +430,8 @@ public class finalAssignment extends JComponent implements ActionListener {
      //move him
      enemy.x = enemy.x + (int)enemyX;
      enemy.y = enemy.y + (int)enemyY;
-    
     }
-    
-
+   
     private void checkForCollision() {
         //make enemy8 bounce off bottom or top or side to side
         //top/bottom
@@ -522,9 +536,46 @@ public class finalAssignment extends JComponent implements ActionListener {
         if(enemy.y + enemy.height  >HEIGHT){
             enemyAngle = enemyAngle + 45;}
     }
-
+    //restarting game
     private void restartGame() {
-        
+        if(numberOfClicks >=20){
+              //reset kills
+              kills = 0;
+              //reset all enemies to dif positions
+              enemy.x = 700;
+              enemy.y = 400;
+              enemy.width = 30;
+              enemy.height = 30;
+              enemy2.x = 600;
+              enemy2.y = 200;
+              enemy2.width = 20;
+              enemy2.height = 20;
+              enemy3.x = 350;
+              enemy3.y = 5;
+              enemy3.width = 50;
+              enemy3.height = 50;
+              enemy4.x = 200;
+              enemy4.y = 682;
+              enemy4.width = 40;
+              enemy4.height = 40;
+              enemy5.x = 500;
+              enemy5.y = 200;
+              enemy5.width = 50;
+              enemy5.height = 50;
+              enemy6.x = 200;
+              enemy6.y = 150;
+              enemy6.width = 25;
+              enemy6.height = 25;
+              enemy7.x = 50;
+              enemy7.y = 150;
+              enemy7.width = 25;
+              enemy7.height = 25;
+              enemy8.x = 500;
+              enemy8.y = 720;
+              enemy8.width = 60;
+              enemy8.height = 60;
+              //set amount of clicks to 0
+              numberOfClicks =0;}
     }
         
     // Used to implement any of the Mouse Actions
@@ -579,8 +630,9 @@ public class finalAssignment extends JComponent implements ActionListener {
         
         //restarting the game
         if(winBox.contains(mouseX, mouseY)){
-            kills = kills - 8;
-             //reset all enemies
+              //reset kills
+              kills = 0;
+              //reset all enemies
               enemy.x = 400;
               enemy.y = 400;
               enemy.width = 30;
@@ -612,7 +664,9 @@ public class finalAssignment extends JComponent implements ActionListener {
               enemy8.x = 500;
               enemy8.y = 720;
               enemy8.width = 60;
-              enemy8.height = 60;}
+              enemy8.height = 60;
+              //set amount of clicks to -1 b/c it takes 1 click to restart game
+              numberOfClicks =-1;}
               
               //when mouse is clicked
               if(background.contains(mouseX, mouseY)){
@@ -620,16 +674,14 @@ public class finalAssignment extends JComponent implements ActionListener {
               //if amount of clicks exceeds 20
               if(numberOfClicks >20){
                   restartGame();
-                  
               }
-              
-              
-        
-    }
+        }  
+    
+
+    
         // if a mouse button has been released
         @Override
         public void mouseReleased(MouseEvent e) {
-
         }
 
         // if the scroll wheel has been moved
